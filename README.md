@@ -89,9 +89,11 @@ plt.axis('off')
 
 ### Prewitt Edge Detector:
 ```
-image = cv2.imread("C:butterfly.jpg") 
+
+image = cv2.imread("C:butterfly.jpg")
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
 prewitt_x = np.array([[1, 0, -1],
                       [1, 0, -1],
                       [1, 0, -1]])
@@ -100,14 +102,16 @@ prewitt_y = np.array([[1, 1, 1],
                       [0, 0, 0],
                       [-1, -1, -1]])
 
-prewitt_x_edge = cv2.filter2D(gray, -1, prewitt_x)
-prewitt_y_edge = cv2.filter2D(gray, -1, prewitt_y)
-prewitt = cv2.magnitude(prewitt_x_edge.astype(np.float32),
-                        prewitt_y_edge.astype(np.float32))
+prewitt_x_edge = cv2.filter2D(gray, cv2.CV_32F, prewitt_x)
+prewitt_y_edge = cv2.filter2D(gray, cv2.CV_32F, prewitt_y)
 
-plt.imshow(canny_edges, cmap='gray')
+prewitt = cv2.magnitude(prewitt_x_edge, prewitt_y_edge)
+
+plt.imshow(prewitt, cmap='gray')
 plt.title('Prewitt Edge Detection')
 plt.axis('off')
+plt.show()
+
 ```
 ## OUTPUT:
 <img width="390" height="392" alt="image" src="https://github.com/user-attachments/assets/c4123243-55c5-4cc7-b8fe-7b4436682135" />
