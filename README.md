@@ -90,6 +90,7 @@ plt.axis('off')
 ### Prewitt Edge Detector:
 ```
 
+
 image = cv2.imread("C:butterfly.jpg")
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -112,6 +113,7 @@ plt.title('Prewitt Edge Detection')
 plt.axis('off')
 plt.show()
 
+
 ```
 ## OUTPUT:
 <img width="390" height="392" alt="image" src="https://github.com/user-attachments/assets/c4123243-55c5-4cc7-b8fe-7b4436682135" />
@@ -122,7 +124,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-image = cv2.imread(r"\butterfly.jpg")
+image = cv2.imread(r"butterfly.jpg")
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 roberts_x = np.array([[1, 0],
